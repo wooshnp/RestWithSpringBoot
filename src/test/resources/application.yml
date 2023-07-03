@@ -17,3 +17,10 @@ spring:
     show-sql: false
 server:
   port: 8888
+cors:
+  originPatterns: http://localhost:8080,http://localhost:3000
+security:
+  jwt:
+    token:
+      secret-key: 53cr37
+      expire-lenght: 3600000
