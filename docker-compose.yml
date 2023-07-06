@@ -6,9 +6,8 @@ services:
     restart: always
     environment:
       TZ: America/Sao_Paulo
-      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
       MYSQL_USER: docker
-      MYSQL_PASSWORD: admin123
       MYSQL_DATABASE: rest_with_spring_boot_udemy
       MYSQL_ROOT_HOST: '%'
       MYSQL_TCP_PORT: 3308
@@ -21,13 +20,13 @@ services:
   rest-with-spring-boot-udemy:
     image: wooshnp/rest-with-spring-boot-udemy
     restart: always
-    build: ./rest-with-spring-boot-udemy
-    working_dir: /rest-with-spring-boot-udemy
+    build: ./
+    working_dir: /
     environment:
       TZ: America/Sao_Paulo
-      SPRING.DATASOURCE.URL: jdbc:mysql://db:3308/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC&useSSL=false
-      SPRING.DATASOURCE.USERNAME: root
-      SPRING.DATASOURCE.PASSWORD: admin123
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3308/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_FLYWAY_URL: jdbc:mysql://db:3308/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC&useSSL=false
     ports:
       - 80:80
     command: mvn spring-boot:run
@@ -36,5 +35,5 @@ services:
     networks:
       - woosh-network
 networks:
-  erudio-network:
+  woosh-network:
     driver: bridge
