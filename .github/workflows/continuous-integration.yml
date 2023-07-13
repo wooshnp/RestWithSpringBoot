@@ -34,7 +34,7 @@ jobs:
       
     - name: Docker Compose Build
       working-directory: ./
-      run:  docker build -t ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest
+      run:  docker build -t ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest .
 
     - name: Push to Docker Hub Container Registry
       run: |
