@@ -21,9 +21,9 @@ jobs:
     - name: Login to Docker Hub with no PreBuild-Action
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Verify Docker Images
-      run: docker images
-      
+    - name: Verify Docker Image
+      run: docker pull ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest
+    
     - name: Set up JDK 18
       uses: actions/setup-java@v3
       with:
