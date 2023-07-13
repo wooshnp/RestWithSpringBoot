@@ -19,7 +19,7 @@ services:
     networks:
       - woosh-network
   rest-with-spring-boot-udemy:
-    image: wooshnp/rest-with-spring-boot-udemy
+    image: wooshnp/rest-with-spring-boot-udemy:latest
     restart: always
     working_dir: /
     environment:
