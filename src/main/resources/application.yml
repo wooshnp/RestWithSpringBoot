@@ -1,7 +1,7 @@
 server:
   port: 80
 cors:
-  originPatterns: http://localhost:8080,http://localhost:3000
+  originPatterns: 'http://localhost:8080,http://localhost:3000'
 file:
   upload-dir: /Users/nunowpinho/Code/
 security:
@@ -12,13 +12,17 @@ security:
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC
-    username: root
+    url: >-
+      jdbc:mysql://rest-with-spring-boot-udemy.ckf6zuhquqhy.eu-west-2.rds.amazonaws.com:3306/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC
+    username: docker
+    password: admin123
   flyway:
     baseline-on-migrate: true
     schemas: rest_with_spring_boot_udemy
-    url: jdbc:mysql://localhost:3306/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC&useSSL=false
-    user: root
+    url: >-
+      jdbc:mysql://rest-with-spring-boot-udemy.ckf6zuhquqhy.eu-west-2.rds.amazonaws.com:3306/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC&useSSL=false
+    username: docker
+    password: admin123
   jackson:
     default-property-inclusion: non_null
   jpa:
