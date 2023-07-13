@@ -38,7 +38,7 @@ jobs:
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:${{ github.run_id }}
 
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:${{ github.run_id }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest
+        # docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-udemy:latest
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
 #     - name: Update dependency graph
