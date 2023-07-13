@@ -34,6 +34,16 @@ jobs:
     - name: Build Application JAR
       working-directory: ./
       run:  mvn clean package -DskipTests
+
+    - name: Jar Download
+      uses: nvoxland/jar-download-action@v1.0.0
+      with:
+        # Group ID
+        groupId: lab.training.restwithspringboot
+        # Artifact ID
+        artifactId: rest-with-springboot
+        # Artifact version
+        version: 0.0.1-SNAPSHOT
       
     - name: Docker Compose Build
       working-directory: ./
